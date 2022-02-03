@@ -18,7 +18,7 @@ public class Principal {
 		Cliente cliente3 = new Cliente("20.517.262-1", "Elena Padilla", "elenap@gmail.com", "Trinidad 1567", 3,"Las papas tamaño mediano");
 		
 		//Creo Proveedores
-		Proveedor proveedor1 = new Proveedor("14.517.262-1", "La Vega Central");
+		Proveedor proveedor1 = new Proveedor("14.517.262-1", "La Vega Central.");
 		Proveedor proveedor2 = new Proveedor("17.678.55-2", "Lo Valledor");
 		
 		//Creo el Pedido
@@ -40,18 +40,23 @@ public class Principal {
 	     System.out.println("             DELIVERY DE VERDURAS             ");
 	     System.out.println("----------------------------------------------");
 		 //Creo la Entrega del Pedido
-		 EntregaPedido entregaPedido1 = new EntregaPedido(1, cliente3, trabajador3, pedido1);
-		 System.out.println("Cliente: " + entregaPedido1.getCliente().getNombre()+" " +  
+		 EntregaPedido entregaPedido1 = new EntregaPedido(1123, cliente3, trabajador3, pedido1);
+		 System.out.println("Codigo Pedido: "  + entregaPedido1.getCodioEntrega()+
+				            "\nCliente: " + entregaPedido1.getCliente().getNombre()+" " +  
 		                    "\nRut : " +entregaPedido1.getCliente().getRut()+
 		                    "\nDireccion : " +entregaPedido1.getCliente().getDireccion()+
+		                    "\nCorreo electronico : " + entregaPedido1.getCliente().getMail() + 
+		                    "\nNota : "+ entregaPedido1.getCliente().getComentarioCompra()+
 		                    "\n----------------------------------------------"+
 			                "\n" +
 			                "Pedido realizado por:" + entregaPedido1.getTrabajador().getNombre() +
+			                "\nCodigo Trabajador:" + entregaPedido1.getTrabajador().getCodigo()+
 			                "\nDetalle del Pedido:" + entregaPedido1.getPedido().getProducto().size() + " " + "productos."       
-		                    
+			                
 				 );
-		 System.out.println("Lista de productos: " + procustosP);
-			   	
+		                    System.out.println("Lista de productos: " + procustosP);
+		                    System.out.println("----------------------------------------------");
+		                    System.out.println("\nTodos nuestros productos son frescos traidos directamente de " + proveedor1.getNombreProveedor());
 	}
 
 }
